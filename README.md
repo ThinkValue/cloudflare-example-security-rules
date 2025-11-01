@@ -20,19 +20,20 @@ NOTE: I am explicitly allowing googlebot to discover my sitemap and blocking eve
 (http.request.method eq "DELETE") or 
 (http.request.method eq "PATCH") or
 
-(http.user_agent contains "Applebot") or 
-(http.user_agent contains "bingbot") or 
-(http.user_agent contains "Bytespider") or 
-(http.user_agent contains "facebookexternalhit") or 
-(http.user_agent contains "ChatGPT-User") or 
-(http.user_agent contains "DuckAssistBot") or 
-(http.user_agent contains "DuckDuckBot") or 
-(http.user_agent contains "GPTBot") or 
-(http.user_agent contains "meta-externalfetcher") or 
-(http.user_agent contains "MistralAI-User") or 
-(http.user_agent contains "OAI-SearchBot") or 
-(http.user_agent contains "Perplexity-User") or 
-(http.user_agent contains "PerplexityBot") or 
+(http.user_agent contains "Applebot") or
+(http.user_agent contains "Applebot-Extended") or
+(http.user_agent contains "bingbot") or
+(http.user_agent contains "Bytespider") or
+(http.user_agent contains "facebookexternalhit") or
+(http.user_agent contains "ChatGPT-User") or
+(http.user_agent contains "DuckAssistBot") or
+(http.user_agent contains "DuckDuckBot") or
+(http.user_agent contains "GPTBot") or
+(http.user_agent contains "meta-externalfetcher") or
+(http.user_agent contains "MistralAI-User") or
+(http.user_agent contains "OAI-SearchBot") or
+(http.user_agent contains "Perplexity-User") or
+(http.user_agent contains "PerplexityBot") or
 (http.user_agent contains "ProRataInc") or
 (http.user_agent contains "SemrushBot") or
 (http.user_agent contains "SemrushBot-BA") or
@@ -42,7 +43,10 @@ NOTE: I am explicitly allowing googlebot to discover my sitemap and blocking eve
 (http.user_agent contains "SeznamBot") or
 (http.user_agent contains "CriteoBot") or
 (http.user_agent contains "AhrefsBot") or
-(http.user_agent contains "MJ12bot")
+(http.user_agent contains "MJ12bot") or
+(http.user_agent contains "Google-Extended") or
+(http.user_agent contains "Amazonbot") or
+(http.user_agent contains "CCBot")
 ```
 
 # CHALLENGE
