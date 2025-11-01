@@ -5,11 +5,14 @@ NOTE: I am explicitly allowing googlebot to discover my sitemap and blocking eve
 
 # ALLOW
 
+```
 (http.request.uri.path eq "/robots.txt") or
 ((http.request.uri.path eq "/sitemap.xml") and (lower(http.user_agent) contains "googlebot"))
+```
 
 # BLOCK
 
+```
 (http.request.uri.path eq "/sitemap.xml") or
 
 (http.request.method eq "POST") or 
@@ -40,9 +43,11 @@ NOTE: I am explicitly allowing googlebot to discover my sitemap and blocking eve
 (http.user_agent contains "CriteoBot") or
 (http.user_agent contains "AhrefsBot") or
 (http.user_agent contains "MJ12bot")
+```
 
 # CHALLENGE
 
+```
 (ip.src.asnum in {60068 9009 16247 51332 212238 131199 22298 29761 62639 206150 210277 46562 8100 3214 206092 206074 206164 213074 4134 4837 9808 45090 37963 9506 4657 4773 45143 45090 132203 39232 37105 55836 268044 133982 6057 8697 9299 49273 136907 8452 8151 44244 7713 14593 328539 36925 202441 7303 30689}) or
 
 (ip.src.country in {"AF" "DZ" "AD" "AW" "BD" "BR" "BI" "CF" "CL" "CN" "CC" "CO" "CG" "DO" "EG" "GF" "GT" "HN" "HK" "IN" "ID" "IR" "IQ" "JO" "KZ" "KE" "KR" "MG" "MY" "MV" "MX" "MD" "MZ" "NI" "PH" "RU" "SA" "SG" "ZA" "SY" "TZ" "TH" "TN" "TR" "TM" "UA" "AE" "UZ" "VE" "VN" "ZM" "TK"}) or
@@ -116,3 +121,4 @@ lower(http.request.uri.path) contains "meteor." or
 lower(http.request.uri.path) contains "redacted" or 
 lower(http.request.uri.path) contains "config" or
 lower(http.request.uri.path) contains "credentials"
+```
