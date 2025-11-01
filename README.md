@@ -1,4 +1,4 @@
-# cloudflare-example-security-rules
+# Cloudflare Example Security Rules
 A set of security rules for protecting a public webapp. All the riles are below, you should split them into 3 separate sets: SKIP, BLOCK, CHALLENGE.
 
 NOTE: I am explicitly allowing googlebot to discover my sitemap and blocking everything else. You should remove the first line in the block rules and 2nd line in the allow rules if you don't like this approach.
