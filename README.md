@@ -52,8 +52,8 @@ NOTE: I am explicitly allowing googlebot to discover my sitemap and blocking eve
 (http.user_agent contains "brightbot") or 
 (http.user_agent contains "python") or
 
-(ends_with(http.request.uri.path, ".php")) or
-(ends_with(http.request.uri.path, ".jsp")) or
+(ends_with(http.request.uri.path, ".php")) or 
+(ends_with(http.request.uri.path, ".jsp")) or 
 (ends_with(http.request.uri.path, ".sql")) or
 (ends_with(http.request.uri.path, ".yml")) or
 (ends_with(http.request.uri.path, ".yaml")) or
