@@ -34,6 +34,7 @@ NOTE: I am explicitly allowing googlebot to discover my sitemap and blocking eve
 (http.user_agent contains "OAI-SearchBot") or
 (http.user_agent contains "Perplexity-User") or
 (http.user_agent contains "PerplexityBot") or
+(http.user_agent contains "ZoominfoBot") or
 (http.user_agent contains "ProRataInc") or
 (http.user_agent contains "SemrushBot") or
 (http.user_agent contains "SemrushBot-BA") or
@@ -60,7 +61,7 @@ NOTE: I am explicitly allowing googlebot to discover my sitemap and blocking eve
 (ip.src.country in {"AF" "DZ" "AD" "AW" "BD" "BR" "BI" "CF" "CL" "CN" "CC" "CO" "CG" "DO" "EG" "GF" "GT" "HN" "HK" "IN" "ID" "IR" "IQ" "JO" "KZ" "KE" "KR" "MG" "MY" "MV" "MX" "MD" "MZ" "NI" "PH" "RU" "SA" "SG" "ZA" "SY" "TZ" "TH" "TN" "TR" "TM" "UA" "AE" "UZ" "VE" "VN" "ZM" "TK"}) or
 
 (http.user_agent contains "python-requests/2.32.4") or 
-(http.user_agent contains "Go-http-client/2.0") or
+(http.user_agent contains "Go-http-client") or
 (http.user_agent contains "brightbot") or 
 (http.user_agent contains "python") or
 
