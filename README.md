@@ -13,11 +13,11 @@ NOTE: I am explicitly allowing googlebot to discover my sitemap and blocking eve
 # BLOCK
 
 ```
-(http.request.uri.path eq "/sitemap.xml") or
+(http.request.uri eq "/sitemap.xml") or
 
-(http.request.method eq "POST") or 
-(http.request.method eq "PUT") or 
-(http.request.method eq "DELETE") or 
+(http.request.method eq "POST") or
+(http.request.method eq "PUT") or
+(http.request.method eq "DELETE") or
 (http.request.method eq "PATCH") or
 
 (http.user_agent contains "Applebot") or
@@ -33,8 +33,8 @@ NOTE: I am explicitly allowing googlebot to discover my sitemap and blocking eve
 (http.user_agent contains "MistralAI-User") or
 (http.user_agent contains "OAI-SearchBot") or
 (http.user_agent contains "Perplexity-User") or
-(http.user_agent contains "PerplexityBot") or
 (http.user_agent contains "ZoominfoBot") or
+(http.user_agent contains "PerplexityBot") or
 (http.user_agent contains "ProRataInc") or
 (http.user_agent contains "SemrushBot") or
 (http.user_agent contains "SemrushBot-BA") or
@@ -50,15 +50,28 @@ NOTE: I am explicitly allowing googlebot to discover my sitemap and blocking eve
 (http.user_agent contains "CCBot") or
 (http.user_agent contains "YandexBot") or
 (http.user_agent contains "Claude-SearchBot") or
-(http.user_agent contains "serpstatbot")
+(http.user_agent contains "dataminr") or
+(http.user_agent contains "serpstatbot") or
+(http.user_agent contains "leakix") or
+(http.user_agent contains "DotBot") or
+(http.user_agent contains "IbouBot") or
+(http.user_agent contains "2ip") or
+(http.user_agent contains "censys.io") or
+
+(ip.src.country eq "SG") or
+(ip.src.country eq "CN") or
+
+(ip.src.asnum in {132203 4134 4837 133982 45090 9009 136907}) or
+
+(any(http.request.headers["accept-language"][*] contains "zh-CN"))
 ```
 
 # CHALLENGE
 
 ```
-(ip.src.asnum in {60068 9009 16247 51332 212238 131199 22298 29761 62639 206150 210277 46562 8100 3214 206092 206074 206164 213074 4134 4837 9808 45090 37963 9506 4657 4773 45143 45090 132203 39232 37105 55836 268044 133982 6057 8697 9299 49273 136907 8452 8151 44244 7713 14593 328539 36925 202441 7303 30689}) or
+(ip.src.asnum in {60068 5713 28885 59668 51375 269679 265477 7418 28210 137526 56264 264205 9009 16247 51332 212238 131199 22298 29761 62639 206150 210277 46562 8100 3214 206092 206074 206164 213074 4134 4837 9808 37963 9506 4657 4773 45143 45090 132203 39232 37105 55836 268044 133982 6057 8697 9299 49273 136907 8452 8151 44244 7713 14593 328539 36925 202441 7303 30689 45102 22773 210906 7922 174 214483 5089 215595}) or
 
-(ip.src.country in {"AF" "DZ" "AD" "AW" "BD" "BR" "BI" "CF" "CL" "CN" "CC" "CO" "CG" "DO" "EG" "GF" "GT" "HN" "HK" "IN" "ID" "IR" "IQ" "JO" "KZ" "KE" "KR" "MG" "MY" "MV" "MX" "MD" "MZ" "NI" "PH" "RU" "SA" "SG" "ZA" "SY" "TZ" "TH" "TN" "TR" "TM" "UA" "AE" "UZ" "VE" "VN" "ZM" "TK"}) or
+(ip.src.country in {"AF" "DZ" "AD" "AW" "BD" "BR" "BI" "BO" "CF" "CL" "CN" "CC" "CO" "CG" "DO" "EG" "GF" "GT" "HN" "HK" "IN" "ID" "IR" "IQ" "JO" "KZ" "KE" "KR" "MG" "MY" "MV" "MX" "MD" "MZ" "NI" "PH" "RU" "SA" "SG" "ZA" "SY" "TZ" "TH" "TN" "TR" "TM" "UA" "AE" "UZ" "VE" "VN" "ZM" "TK"}) or
 
 (http.user_agent contains "python-requests/2.32.4") or 
 (http.user_agent contains "Go-http-client") or
@@ -128,4 +141,6 @@ lower(http.request.uri.path) contains "meteor." or
 
 lower(http.request.uri.path) contains "redacted" or 
 lower(http.request.uri.path) contains "config" or
-lower(http.request.uri.path) contains "credentials"
+lower(http.request.uri.path) contains "credentials" or
+
+(ip.src in $YOUR_CLOUDFLARE_BLACKLIST_NAME)
